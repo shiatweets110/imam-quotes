@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shia Imam Quotes</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            background-image: url('imam_ali_as_shrine_at_night__najaf__by_photo_n_graph_d71wa5g-fullview.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .quote-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .quote-container:hover {
+            transform: translateY(-5px);
+        }
+        .quote {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .author {
+            font-style: italic;
+            text-align: right;
+            color: #ffd700;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Wisdom of Shia Imams</h1>
+        <div id="quotes"></div>
+    </div>
+
+    <script>
+        const quotes = [
+            { text: "The most perfect of men in intellect is the best of them in ethics.", author: "Imam Ali (AS)" },
+            { text: "Knowledge is a light which Allah places in the heart of whomsoever He wills.", author: "Imam Jafar al-Sadiq (AS)" },
+            { text: "He who has no kindness has no faith.", author: "Imam Hussein (AS)" },
+            { text: "The best form of worship is to fulfill the rights of others.", author: "Imam Zain al-Abidin (AS)" },
+            { text: "Silence is the best reply to a fool.", author: "Imam Ali (AS)" },
+            { text: "This entire world is not worth a single tear.", author: "Imam Ali (AS)" },
+        ];
+
+        function displayQuotes() {
+            const quotesContainer = document.getElementById('quotes');
+            quotes.forEach(quote => {
+                const quoteElement = document.createElement('div');
+                quoteElement.classList.add('quote-container');
+                quoteElement.innerHTML = `
+                    <p class="quote">"${quote.text}"</p>
+                    <p class="author">- ${quote.author}</p>
+                `;
+                quotesContainer.appendChild(quoteElement);
+            });
+        }
+
+        displayQuotes();
+    </script>
+</body>
+</html>
